@@ -14,6 +14,7 @@
 # include <iomanip>
 # include <string>
 # include <sstream>
+# include <cstdlib>
 
 Phonebook::Phonebook(void)
 {
