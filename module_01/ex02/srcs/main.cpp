@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zvandeven <zvandeven@student.42.fr>        +#+  +:+       +#+        */
+/*   By: zvan-de- <zvan-de-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 15:23:14 by zvandeven         #+#    #+#             */
-/*   Updated: 2024/01/15 15:51:35 by zvandeven        ###   ########.fr       */
+/*   Updated: 2024/01/17 17:14:30 by zvan-de-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,4 @@ int	main()
 
 	// The value pointed to by stringREF.
 	std::cout << "The value pointed to by stringREF: " << stringREF << std::endl;
-
-
-	
-	
 }
