@@ -3,14 +3,13 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: zvan-de- <zvan-de-@student.42.fr>          +#+  +:+       +#+         #
+#    By: zvandeven <zvandeven@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/11 12:46:32 by zvan-de-          #+#    #+#              #
-#    Updated: 2024/01/18 17:28:00 by zvan-de-         ###   ########.fr        #
+#    Updated: 2024/01/15 15:22:57 by zvandeven        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-# https://github.com/qingqingqingli/CPP/wiki/Module00
 
 RT	= \033[0m
 G	= \033[0;32m
@@ -22,7 +21,7 @@ R 	= \033[0;31m
 #------------------------------------------------------------------------------#
 
 # Program name
-NAME 			= megaphone
+NAME 			= main
 
 # Compiler and flags
 CC				= c++
@@ -57,7 +56,7 @@ define update_progress
     $(if $(TOTAL), \
         $(eval PERCENT=$(shell echo $$(($(CURR) * 100 / $(TOTAL))))) \
     )
-    @printf "\r\\033[K$(B)Phonebook: $(RT) $(PERCENT)%% ["
+    @printf "\r\\033[K$(B)$(NAME): $(RT) $(PERCENT)%% ["
     @for i in `seq 1 $(PERCENT)`; do \
         printf "$(G)=$(RT)"; \
     done
