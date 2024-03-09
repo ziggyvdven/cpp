@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: zvandeven <zvandeven@student.42.fr>        +#+  +:+       +#+         #
+#    By: zvan-de- <zvan-de-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/11 12:46:32 by zvan-de-          #+#    #+#              #
-#    Updated: 2024/01/15 15:22:57 by zvandeven        ###   ########.fr        #
+#    Updated: 2024/02/29 17:46:22 by zvan-de-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -79,7 +79,7 @@ all: $(HEAD) $(NAME)
 
 $(NAME): $(OBJS_PATH) $(OBJS)
 	@$(CC)  $(CFLAGS) -o $@ $(OBJS) $(HEADERS)
-	@echo "$(G)\n -- $(NAME) made ☎️ --$(RT)"
+	@echo "$(G)\n -- $(NAME) made 🏹 --$(RT)"
 
 $(OBJS_PATH)%.o: $(SRCS_PATH)%.cpp
 	@$(CC) $(CFLAGS) -o $@ -c $< 

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.cpp                                      :+:      :+:    :+:   */
+/*   Phonebook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zvan-de- <zvan-de-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 14:22:59 by zvan-de-          #+#    #+#             */
-/*   Updated: 2024/01/12 14:54:18 by zvan-de-         ###   ########.fr       */
+/*   Updated: 2024/02/29 17:14:12 by zvan-de-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ Phonebook::~Phonebook(void)
 	return;
 }
 
-std::string	Phonebook::get_entry(std::string msg)
+std::string	Phonebook::get_entry(std::string msg) const
 {
 	std::string entry;
 
@@ -43,7 +43,7 @@ std::string	Phonebook::get_entry(std::string msg)
 	exit(1);
 }
 
-int Phonebook::maxcontacts(std::string command)
+int Phonebook::maxcontacts(std::string command) const
 {
 	static int contacts = 0;
 
@@ -58,7 +58,7 @@ int Phonebook::maxcontacts(std::string command)
 	return (contacts);
 }
 
-std::string Phonebook::truncate(std::string string)
+std::string Phonebook::truncate(std::string string) const
 {
 	std::string NewString;
 	
@@ -82,7 +82,7 @@ void	Phonebook::add(int i)
 	std::cout << std::endl;
 }
 
-void	Phonebook::display(int i)
+void	Phonebook::display(int i) const
 {
 	std::cout << std::endl << BOLD << "CONTACT INFORMATION:" << END << std::endl;
 	std::cout << "First name     :" << this->contacts[i].getFirstName() << std::endl;
@@ -93,7 +93,7 @@ void	Phonebook::display(int i)
 	std::cout << std::endl;
 }
 
-void	Phonebook::search()
+void	Phonebook::search() const
 {
 	int index;
 	

@@ -6,7 +6,7 @@
 /*   By: zvan-de- <zvan-de-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 15:35:40 by zvan-de-          #+#    #+#             */
-/*   Updated: 2024/01/12 16:49:38 by zvan-de-         ###   ########.fr       */
+/*   Updated: 2024/02/29 17:26:26 by zvan-de-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 int main() 
 {
-	std::cout << G << "Zombie created normally called henk, class will be destroyed when main is finished: " << END << std::endl;
+	std::cout << G << "Zombie created on the stack called henk, class will be destroyed when main is finished: " << END << std::endl;
 	Zombie zombie1("Henk");
 	zombie1.announce();
 	

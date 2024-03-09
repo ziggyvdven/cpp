@@ -6,7 +6,7 @@
 /*   By: zvan-de- <zvan-de-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 15:36:07 by zvan-de-          #+#    #+#             */
-/*   Updated: 2024/01/18 15:34:50 by zvan-de-         ###   ########.fr       */
+/*   Updated: 2024/02/29 17:29:25 by zvan-de-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void Zombie::setName(std::string name)
 	return ;
 }
 
-void Zombie::announce(void)
+void Zombie::announce(void) const
 {
 	std::cout << BOLD << this->_name  << ": BraiiiiiiinnnzzzZ..." << END << std::endl;
 	return;

@@ -6,7 +6,7 @@
 /*   By: zvan-de- <zvan-de-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 15:34:06 by zvan-de-          #+#    #+#             */
-/*   Updated: 2024/01/18 15:34:33 by zvan-de-         ###   ########.fr       */
+/*   Updated: 2024/02/29 17:29:18 by zvan-de-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ class Zombie
   	Zombie(); 
 	~Zombie(void);
 	void setName(std::string name);
-	void announce(void);
+	void announce(void) const;
 };
 
 Zombie* newZombie(std::string name);

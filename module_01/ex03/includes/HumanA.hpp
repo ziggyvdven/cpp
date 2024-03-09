@@ -6,7 +6,7 @@
 /*   By: zvan-de- <zvan-de-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 16:12:42 by zvandeven         #+#    #+#             */
-/*   Updated: 2024/01/18 16:48:44 by zvan-de-         ###   ########.fr       */
+/*   Updated: 2024/02/29 17:53:02 by zvan-de-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class HumanA
 	public:
 		HumanA(std::string human_name, Weapon &weaponREF);
 		~HumanA( void );
-		void attack(void);
+		void attack(void) const;
 };
 
 #endif

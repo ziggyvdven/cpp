@@ -6,7 +6,7 @@
 /*   By: zvan-de- <zvan-de-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 13:05:14 by zvan-de-          #+#    #+#             */
-/*   Updated: 2024/01/12 14:55:37 by zvan-de-         ###   ########.fr       */
+/*   Updated: 2024/02/29 17:12:31 by zvan-de-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,11 @@ class Contact
 	void setNickName(std::string str);
 	void setPhoneNumber(std::string str);
 	void setDarkestSecret(std::string str);
-	std::string getFirstName();
-	std::string getLastName();
-	std::string getNickName();
-	std::string getPhoneNumber();
-	std::string getDarkestSecret();	
+	std::string getFirstName() const;
+	std::string getLastName() const;
+	std::string getNickName() const;
+	std::string getPhoneNumber() const;
+	std::string getDarkestSecret() const;	
 };
 
 #endif
