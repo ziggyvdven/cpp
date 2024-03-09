@@ -6,11 +6,9 @@
 #    By: zvan-de- <zvan-de-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/11 12:46:32 by zvan-de-          #+#    #+#              #
-#    Updated: 2024/01/18 17:28:00 by zvan-de-         ###   ########.fr        #
+#    Updated: 2024/03/07 14:29:45 by zvan-de-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-
-# https://github.com/qingqingqingli/CPP/wiki/Module00
 
 RT	= \033[0m
 G	= \033[0;32m
@@ -80,7 +78,7 @@ all: $(HEAD) $(NAME)
 
 $(NAME): $(OBJS_PATH) $(OBJS)
 	@$(CC)  $(CFLAGS) -o $@ $(OBJS) $(HEADERS)
-	@echo "$(G)\n -- $(NAME) made ☎️ --$(RT)"
+	@echo "$(G)\n -- $(NAME) made 📣 --$(RT)"
 
 $(OBJS_PATH)%.o: $(SRCS_PATH)%.cpp
 	@$(CC) $(CFLAGS) -o $@ -c $< 

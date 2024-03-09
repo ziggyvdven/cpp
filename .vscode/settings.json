@@ -61,7 +61,10 @@
     "unordered_map": "cpp",
     "utility": "cpp",
     "vector": "cpp",
-    "fstream": "cpp"
+    "fstream": "cpp",
+    "deque": "cpp",
+    "stack": "cpp",
+    "filesystem": "cpp"
   },
   "C_Cpp_Runner.cCompilerPath": "clang",
   "C_Cpp_Runner.cppCompilerPath": "clang++",
