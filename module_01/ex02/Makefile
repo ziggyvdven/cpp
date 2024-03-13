@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: zvandeven <zvandeven@student.42.fr>        +#+  +:+       +#+         #
+#    By: zvan-de- <zvan-de-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/11 12:46:32 by zvan-de-          #+#    #+#              #
-#    Updated: 2024/01/15 15:22:57 by zvandeven        ###   ########.fr        #
+#    Updated: 2024/03/13 14:14:47 by zvan-de-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -99,10 +99,10 @@ re: fclean all
 
 .PHONY:		all, clean, fclean, re
 
-# VALGRIND #
+# # VALGRIND #
 
-val: $(NAME)
-	valgrind --leak-check=full \
-	--show-leak-kinds=all \
-	--show-reachable=yes \
-	--track-origins=yes -s \
+# val: $(NAME)
+# 	valgrind --leak-check=full \
+# 	--show-leak-kinds=all \
+# 	--show-reachable=yes \
+# 	--track-origins=yes -s \

@@ -6,7 +6,7 @@
 #    By: zvan-de- <zvan-de-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/11 12:46:32 by zvan-de-          #+#    #+#              #
-#    Updated: 2024/02/29 17:46:22 by zvan-de-         ###   ########.fr        #
+#    Updated: 2024/03/13 14:14:37 by zvan-de-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -99,10 +99,10 @@ re: fclean all
 
 .PHONY:		all, clean, fclean, re
 
-# VALGRIND #
+# # VALGRIND #
 
-val: $(NAME)
-	valgrind --leak-check=full \
-	--show-leak-kinds=all \
-	--show-reachable=yes \
-	--track-origins=yes -s \
+# val: $(NAME)
+# 	valgrind --leak-check=full \
+# 	--show-leak-kinds=all \
+# 	--show-reachable=yes \
+# 	--track-origins=yes -s \

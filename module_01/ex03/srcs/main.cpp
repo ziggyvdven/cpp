@@ -6,7 +6,7 @@
 /*   By: zvan-de- <zvan-de-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 15:23:14 by zvandeven         #+#    #+#             */
-/*   Updated: 2024/01/18 16:38:16 by zvan-de-         ###   ########.fr       */
+/*   Updated: 2024/03/13 14:03:31 by zvan-de-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int main() {
 } 
 {
 	Weapon club = Weapon("crude spiked club");
+	
 	HumanB jim("Jim");
 	jim.setWeapon(club);
 	jim.attack();

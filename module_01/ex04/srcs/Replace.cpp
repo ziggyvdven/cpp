@@ -6,7 +6,7 @@
 /*   By: zvan-de- <zvan-de-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 14:32:21 by zvan-de-          #+#    #+#             */
-/*   Updated: 2024/03/07 11:24:48 by zvan-de-         ###   ########.fr       */
+/*   Updated: 2024/03/13 14:27:39 by zvan-de-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ bool Replace::findandreplace( void )
 {
 	std::string input = "";
 	
-	if (!this->_ifs.good() || !this->_ofs.good() || this->_tofind == this->_replace)
+	if (!this->_ifs.good() || !this->_ofs.good() || this->_tofind == this->_replace || this->_tofind.empty())
 		return (false);
 	while(1)
 	{
