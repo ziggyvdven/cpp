@@ -6,7 +6,7 @@
 /*   By: zvan-de- <zvan-de-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 15:57:49 by zvan-de-          #+#    #+#             */
-/*   Updated: 2024/03/08 22:04:17 by zvan-de-         ###   ########.fr       */
+/*   Updated: 2024/03/13 15:31:35 by zvan-de-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,14 @@ const int	Fixed::_nbits = 8;
 
 Fixed::Fixed( void ) : _n( 0 ){
 	
-	std::cout << "Default constructor called" << std::endl;
+	// std::cout << "Default constructor called" << std::endl;
 
 	return;
 }
 
 Fixed::~Fixed( void ){
 	
-	std::cout << "Destructor called" << std::endl;
+	// std::cout << "Destructor called" << std::endl;
 	
 }
 
@@ -36,7 +36,7 @@ Fixed::~Fixed( void ){
 
 Fixed::Fixed( Fixed const & src ){
 	
-	std::cout << "Copy constructor called" << std::endl;
+	// std::cout << "Copy constructor called" << std::endl;
 	*this = src;
 
 	return;
@@ -59,14 +59,14 @@ Fixed &		Fixed::operator=( Fixed const & rhs ){
 
 Fixed::Fixed( int const n) : _n(n << this->_nbits){
 	
-	std::cout << "Int constructor called" << std::endl;
+	// std::cout << "Int constructor called" << std::endl;
 	return;
 }
 
 Fixed::Fixed( float const f) {
 	float result;
 	
-	std::cout << "Float constructor called" << std::endl;
+	// std::cout << "Float constructor called" << std::endl;
 	result = roundf(f * (1 << this->_nbits));
 	this->_n = (int)result; 	
 
@@ -225,11 +225,23 @@ Fixed	&Fixed::max( Fixed &lhs, Fixed &rhs ){
 }
 
 const Fixed	&Fixed::min( const Fixed &lhs, const Fixed &rhs ) {
-	const Fixed &result = ( lhs < rhs ) ? lhs : rhs;
-	return ( result );
+	if ( lhs > rhs){
+		const Fixed &result = lhs;
+		return ( result );
+	}
+	else {
+		const Fixed &result = rhs;
+		return ( result );
+	}
 }
 
 const Fixed	&Fixed::max( const Fixed &lhs, const Fixed &rhs ) {
-	const Fixed &result = ( lhs > rhs ) ? lhs : rhs;
-	return ( result );
+	if ( lhs > rhs){
+		const Fixed &result = lhs;
+		return ( result );
+	}
+	else {
+		const Fixed &result = rhs;
+		return ( result );
+	}
 }
