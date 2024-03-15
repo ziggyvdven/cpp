@@ -64,7 +64,10 @@
     "fstream": "cpp",
     "deque": "cpp",
     "stack": "cpp",
-    "filesystem": "cpp"
+    "filesystem": "cpp",
+    "__tree": "cpp",
+    "list": "cpp",
+    "map": "cpp"
   },
   "C_Cpp_Runner.cCompilerPath": "clang",
   "C_Cpp_Runner.cppCompilerPath": "clang++",

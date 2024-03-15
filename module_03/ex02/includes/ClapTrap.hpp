@@ -6,7 +6,7 @@
 /*   By: zvan-de- <zvan-de-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 15:41:21 by zvan-de-          #+#    #+#             */
-/*   Updated: 2024/03/14 12:52:30 by zvan-de-         ###   ########.fr       */
+/*   Updated: 2024/03/14 20:31:48 by zvan-de-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,9 @@
 # define R "\033[0;31m"
 
 class ClapTrap{
-	private:
+		
+	protected:
+		
 		std::string 	_Name;
 		unsigned int	_Hit;
 		unsigned int	_Energy;

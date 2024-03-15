@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zvan-de- <zvan-de-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 15:41:21 by zvan-de-          #+#    #+#             */
-/*   Updated: 2024/03/14 12:52:30 by zvan-de-         ###   ########.fr       */
+/*   Updated: 2024/03/14 20:12:14 by zvan-de-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP_HPP
-#define CLAPTRAP_HPP
+#ifndef SCAVTRAP_HPP
+#define SCAVTRAP_HPP
 
+#include "ClapTrap.hpp"
 #include <iostream>
 #include <string>
 
@@ -22,31 +23,22 @@
 # define B "\033[0;34m"
 # define R "\033[0;31m"
 
-class ClapTrap{
-	private:
-		std::string 	_Name;
-		unsigned int	_Hit;
-		unsigned int	_Energy;
-		unsigned int	_Attack;
-	
+class ScavTrap : public ClapTrap {
+
 	public:
-						ClapTrap( void );
-						ClapTrap( std::string const Name );
-						ClapTrap( const ClapTrap &src );
-						~ClapTrap( void );
-		ClapTrap &		operator=( const ClapTrap &rhs );
+	/* Constructors */
+		ScavTrap( void );
+		ScavTrap( std::string const Name );
+		ScavTrap( const ScavTrap &src );
+	
+	/* Destructors */
+		~ScavTrap( void );
+	
+	/* Operator overide */
+		ScavTrap &		operator=( const ScavTrap &rhs );
 
 		void 			attack(const std::string& target);
-		void 			takeDamage(unsigned int amount);
-		void 			beRepaired(unsigned int amount);
-
-		std::string 	getName( void ) const;
-		unsigned int 	getHit( void ) const;
-		unsigned int 	getEnergy( void ) const;
-		unsigned int 	getAttack( void ) const;
-
-		bool 			isAlive( void ) const;
-		bool 			isAwake( void ) const;
+		void 			guardGate();
 			
 	};
 

@@ -6,7 +6,7 @@
 /*   By: zvan-de- <zvan-de-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 15:46:51 by zvan-de-          #+#    #+#             */
-/*   Updated: 2024/03/14 13:14:01 by zvan-de-         ###   ########.fr       */
+/*   Updated: 2024/03/14 20:18:48 by zvan-de-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,17 @@
 /*DEFAULT CONSTRUCTOR/DESTRUCTOR **********************************************/
 
 ClapTrap::ClapTrap( void ) : _Name(""), _Hit(10), _Energy(10), _Attack(0){
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << G << "Claptrap Default constructor called" << END << std::endl;
 }
 
 ClapTrap::~ClapTrap(){
-	std::cout << "Destructor called" << std::endl;
+	std::cout << R << "Claptrap Destructor called" << END << std::endl;
 }
 
 /*DEFAULT COPY CONSTRUCTOR ****************************************************/
 
 ClapTrap::ClapTrap( ClapTrap const & src ){
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << G << "Claptrap Copy constructor called" << END << std::endl;
 	*this = src;
 }
 
@@ -36,7 +36,7 @@ ClapTrap::ClapTrap( ClapTrap const & src ){
 
 ClapTrap & ClapTrap::operator=( ClapTrap const & rhs){
 	
-	std::cout << "Copy assignment operator called" << std::endl;
+	std::cout << "(claptrap) Copy assignment operator called" << std::endl;
 	if (this != &rhs)
 	{
 		this->_Name = 	rhs._Name;
@@ -71,7 +71,7 @@ ClapTrap & ClapTrap::operator=( ClapTrap const & rhs){
 /*PARAMETRIC CONSTRUCTOR ******************************************************/
 
 ClapTrap::ClapTrap(std::string const Name) : _Name(Name), _Hit(10), _Energy(10), _Attack(0) {
-	std::cout << "Parametric constructor called" << std::endl;
+	std::cout << G << "Claptrap Parametric constructor called" << END << std::endl;
 }
 
 /*MEMBER FUNCTIONS ************************************************************/
@@ -95,9 +95,9 @@ ClapTrap::ClapTrap(std::string const Name) : _Name(Name), _Hit(10), _Energy(10),
 	void ClapTrap::attack(const std::string& target){
 
 		if (!this->isAwake())
-			std::cout << "ClapTrap " << BOLD << this->_Name << END << " cannot attack" << B << " (No energy) " << END << std::endl;
+			std::cout << "ClapTrap " << BOLD << this->_Name << END << " cannot attack." << B << " (No energy) " << END << std::endl;
 		if (!this->isAlive())
-			std::cout << "ClapTrap " << BOLD << this->_Name << END << " cannot attack" << R << " (Death) " << END << std::endl;
+			std::cout << "ClapTrap " << BOLD << this->_Name << END << " cannot attack." << R << " (Death) " << END << std::endl;
 		if (this->isAwake() && this->isAlive())
 		{
 			this->_Energy -= 1;
