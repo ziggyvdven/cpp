@@ -67,7 +67,8 @@
     "filesystem": "cpp",
     "__tree": "cpp",
     "list": "cpp",
-    "map": "cpp"
+    "map": "cpp",
+    "set": "cpp"
   },
   "C_Cpp_Runner.cCompilerPath": "clang",
   "C_Cpp_Runner.cppCompilerPath": "clang++",

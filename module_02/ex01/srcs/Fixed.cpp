@@ -6,7 +6,7 @@
 /*   By: zvan-de- <zvan-de-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 15:57:49 by zvan-de-          #+#    #+#             */
-/*   Updated: 2024/03/08 18:33:09 by zvan-de-         ###   ########.fr       */
+/*   Updated: 2024/03/21 13:56:40 by zvan-de-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ Fixed::Fixed( Fixed const & src ){
 
 Fixed &		Fixed::operator=( Fixed const & rhs ){
 	
-	// std::cout << "Copy assignment operator called" << std::endl;
+	std::cout << "Copy assignment operator called" << std::endl;
 	this->_n = rhs.getRawBits();
 	
 	return *this;
@@ -67,7 +67,7 @@ Fixed::Fixed( float const f) {
 	float result;
 	
 	std::cout << "Float constructor called" << std::endl;
-	result = roundf(f * (1 << this->_nbits));
+	result = roundf(f * (1 << this->_nbits)); // 
 	this->_n = (int)result; 	
 
 	return;

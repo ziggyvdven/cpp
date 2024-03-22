@@ -6,7 +6,7 @@
 /*   By: zvan-de- <zvan-de-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 15:57:49 by zvan-de-          #+#    #+#             */
-/*   Updated: 2024/03/13 15:31:35 by zvan-de-         ###   ########.fr       */
+/*   Updated: 2024/03/21 15:47:19 by zvan-de-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -193,13 +193,13 @@ Fixed 		Fixed::operator/( Fixed const & rhs ) const{
 /*INCREMENT/DECREMENT OPERATORS************************************************/
 
 Fixed 		&Fixed::operator++( void ) {
-    this->_n = this->_n + 1;
+    this->_n += 1;
     return *this;
 }
 
 Fixed 		Fixed::operator++( int ) { 
     Fixed temp(*this);
-    this->_n = this->_n + 1;
+    this->_n += 1;
     return temp;
 }
 
@@ -225,7 +225,7 @@ Fixed	&Fixed::max( Fixed &lhs, Fixed &rhs ){
 }
 
 const Fixed	&Fixed::min( const Fixed &lhs, const Fixed &rhs ) {
-	if ( lhs > rhs){
+	if ( lhs < rhs){
 		const Fixed &result = lhs;
 		return ( result );
 	}
