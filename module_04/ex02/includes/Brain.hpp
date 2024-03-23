@@ -1,20 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zvan-de- <zvan-de-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/15 16:35:53 by zvan-de-          #+#    #+#             */
-/*   Updated: 2024/03/22 12:48:40 by zvan-de-         ###   ########.fr       */
+/*   Updated: 2024/03/22 13:37:31 by zvan-de-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 
 # include <iostream>
 # include <string>
+# include "AAnimal.hpp"
 
 # define BOLD "\033[1;37m"
 # define END "\033[0m"
@@ -22,50 +23,28 @@
 # define B "\033[0;34m"
 # define R "\033[0;31m"
 
-class Animal
+class Brain
 {
 
 	public:
 
-		Animal();
-		Animal( Animal const & src );
-		Animal(std::string const type);
-		virtual ~Animal();
+		Brain();
+		Brain( Brain const & src );
+		// Brain(std::string const type);
+		~Brain();
 
-		Animal &		operator=( Animal const & rhs );
-
-		std::string 	getType( void ) const;
-		virtual void	makeSound( void ) const;
+		Brain &			operator=( Brain const & rhs );
+		void			setIdea(const int i, std::string idea);
+		std::string 	getIdea(const int i) const;
+		
 
 	protected:
-		std::string type;
 
 	private:
+		std::string _ideas[100];
 
 };
 
-class WrongAnimal
-{
+// std::ostream &			operator<<( std::ostream & o, Brain const & i );
 
-	public:
-
-		WrongAnimal();
-		WrongAnimal( WrongAnimal const & src );
-		WrongAnimal(std::string const type);
-		virtual ~WrongAnimal();
-
-		WrongAnimal &		operator=( WrongAnimal const & rhs );
-
-		std::string 	getType( void ) const;
-		void			makeSound( void ) const;
-
-	protected:
-		std::string type;
-
-	private:
-
-};
-
-std::ostream &			operator<<( std::ostream & o, Animal const & i );
-
-#endif /* ********************************************************** ANIMAL_H */
+#endif /* ********************************************************** BRAIN_H */

@@ -6,7 +6,7 @@
 /*   By: zvan-de- <zvan-de-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 17:03:20 by zvan-de-          #+#    #+#             */
-/*   Updated: 2024/03/22 14:02:05 by zvan-de-         ###   ########.fr       */
+/*   Updated: 2024/03/22 14:03:34 by zvan-de-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,11 @@ void	testshallowness(){
 
 int main() {
 	
-	Animal* animals[10];
+	AAnimal* animals[10];
+
+	// This is not possible cause class is now abstract.
+	// AAnimal j;
+	// AAnimal k = new AAnimal();
 	
 	std::cout << BOLD << "TEST 1 SUBJECT TESTING:" << END << std::endl;
 	for (int i = 0; i < 10; i++)
@@ -94,8 +98,8 @@ int main() {
 		delete animals[i];
 	}
 
-	const Animal* j = new Dog(); 
-	const Animal* i = new Cat();
+	const AAnimal* j = new Dog(); 
+	const AAnimal* i = new Cat();
 	delete j;//should not create a leak 
 	delete i;
 

@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zvan-de- <zvan-de-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/20 14:31:23 by zvan-de-          #+#    #+#             */
-/*   Updated: 2024/03/22 12:49:39 by zvan-de-         ###   ########.fr       */
+/*   Created: 2024/03/20 14:31:14 by zvan-de-          #+#    #+#             */
+/*   Updated: 2024/03/22 13:38:15 by zvan-de-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-#ifndef DOG_HPP
-# define DOG_HPP
+#ifndef CAT_HPP
+# define CAT_HPP
 
 # include <iostream>
 # include <string>
-# include "Animal.hpp"
+# include "Dog.hpp"
 # include "Brain.hpp"
 
-class Dog : public Animal
+class Cat : public AAnimal
 {
 
 	public:
 
-		Dog();
-		Dog( Dog const & src );
-		~Dog();
+		Cat();
+		Cat( Cat const & src );
+		~Cat();
 
-		Dog &			operator=( Dog const & rhs );
+		Cat &			operator=( Cat const & rhs );
 
 		std::string 	getType() const;
 		std::string 	getIdea(int i) const;
@@ -44,6 +44,27 @@ class Dog : public Animal
 
 };
 
-std::ostream &			operator<<( std::ostream & o, Dog const & i );
+class WrongCat : public AWrongAnimal
+{
 
-#endif /* ************************************************************* DOG_H */
+	public:
+
+		WrongCat();
+		WrongCat( WrongCat const & src );
+		~WrongCat();
+
+		WrongCat &		operator=( WrongCat const & rhs );
+
+		std::string 	getType() const;
+		virtual void	makeSound( void ) const;
+
+	protected:
+
+
+	private:
+
+};
+
+std::ostream &			operator<<( std::ostream & o, Cat const & i );
+
+#endif /* ************************************************************* CAT_H */

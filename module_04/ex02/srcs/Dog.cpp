@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zvan-de- <zvan-de-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/15 16:35:33 by zvan-de-          #+#    #+#             */
-/*   Updated: 2024/03/22 12:47:12 by zvan-de-         ###   ########.fr       */
+/*   Updated: 2024/03/22 13:39:22 by zvan-de-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/Cat.hpp"
+#include "../includes/Dog.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Cat::Cat(): Animal(), _brainptr( NULL ) {
-	Animal::type = "Cat";
+Dog::Dog(): AAnimal(), _brainptr( NULL ) {
+	AAnimal::type = "Dog";
 	this->_brainptr = new Brain();
-	std::cout << G << "Cat Default constructor called" << END << std::endl;
+	std::cout << G << "Dog Default constructor called" << END << std::endl;
 }
 
-Cat::Cat( const Cat & src ): Animal(), _brainptr(NULL) {
-	std::cout << G << "Cat Copy constructor called" << END << std::endl;
+Dog::Dog( const Dog & src ): AAnimal(), _brainptr(NULL) {
+	std::cout << G << "Dog Copy constructor called" << END << std::endl;
 	if (src._brainptr)
 		this->_brainptr = new Brain(*src._brainptr);
 }
@@ -32,19 +32,20 @@ Cat::Cat( const Cat & src ): Animal(), _brainptr(NULL) {
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-Cat::~Cat(){
-	std::cout << R << "Cat Destructor called" << END << std::endl;
+Dog::~Dog(){
+	std::cout << R << "Dog Destructor called" << END << std::endl;
 	if (this->_brainptr)
 		delete this->_brainptr;
 }
+
 
 /*
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-Cat &				Cat::operator=( Cat const & rhs )
+Dog &				Dog::operator=( Dog const & rhs )
 {
-	std::cout << "Cat Copy assignment operator called" << std::endl;
+	std::cout << "Dog Copy assignment operator called" << std::endl;
 	if ( this != &rhs )
 	{
 		this->type = rhs.type;
@@ -56,7 +57,7 @@ Cat &				Cat::operator=( Cat const & rhs )
 	return *this;
 }
 
-std::ostream &			operator<<( std::ostream & o, Cat const & i )
+std::ostream &			operator<<( std::ostream & o, Dog const & i )
 {
 	o << "Value = " << i.getType();
 	return o;
@@ -66,19 +67,19 @@ std::ostream &			operator<<( std::ostream & o, Cat const & i )
 /*
 ** --------------------------------- METHODS ----------------------------------
 */
-void			Cat::makeSound( void ) const{
-	std::cout << "SWEINHUND!! i mean MIAUW" << std::endl;
+void			Dog::makeSound( void ) const{
+	std::cout << "ARSCHLOCH! i mean WOOF" << std::endl;
 }
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */
 
-std::string Cat::getType() const{
+std::string Dog::getType() const{
 		return (this->type);
 	}
 
-std::string Cat::getIdea(int i) const{
+std::string Dog::getIdea(int i) const{
 		if (i < 100 && i >= 0)
 			return (this->_brainptr->getIdea(i));
 		else 
@@ -86,7 +87,7 @@ std::string Cat::getIdea(int i) const{
 		return ("");
 	}
 
-void Cat::setIdea(int i, std::string idea) {
+void Dog::setIdea(int i, std::string idea) {
 		if (i < 100 && i >= 0)
 			this->_brainptr->setIdea(i, idea);
 		else 

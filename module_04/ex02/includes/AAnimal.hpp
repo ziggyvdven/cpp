@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   AAnimal.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zvan-de- <zvan-de-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/15 16:35:53 by zvan-de-          #+#    #+#             */
-/*   Updated: 2024/03/22 12:48:40 by zvan-de-         ###   ########.fr       */
+/*   Updated: 2024/03/22 13:36:05 by zvan-de-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef AANIMAL_HPP
+# define AANIMAL_HPP
 
 # include <iostream>
 # include <string>
@@ -22,20 +22,20 @@
 # define B "\033[0;34m"
 # define R "\033[0;31m"
 
-class Animal
+class AAnimal
 {
 
 	public:
 
-		Animal();
-		Animal( Animal const & src );
-		Animal(std::string const type);
-		virtual ~Animal();
+		AAnimal();
+		AAnimal( AAnimal const & src );
+		AAnimal(std::string const type);
+		virtual ~AAnimal() = 0;
 
-		Animal &		operator=( Animal const & rhs );
+		AAnimal &		operator=( AAnimal const & rhs );
 
 		std::string 	getType( void ) const;
-		virtual void	makeSound( void ) const;
+		virtual void	makeSound( void ) const = 0;
 
 	protected:
 		std::string type;
@@ -44,17 +44,17 @@ class Animal
 
 };
 
-class WrongAnimal
+class AWrongAnimal
 {
 
 	public:
 
-		WrongAnimal();
-		WrongAnimal( WrongAnimal const & src );
-		WrongAnimal(std::string const type);
-		virtual ~WrongAnimal();
+		AWrongAnimal();
+		AWrongAnimal( AWrongAnimal const & src );
+		AWrongAnimal(std::string const type);
+		virtual ~AWrongAnimal() = 0;
 
-		WrongAnimal &		operator=( WrongAnimal const & rhs );
+		AWrongAnimal &		operator=( AWrongAnimal const & rhs );
 
 		std::string 	getType( void ) const;
 		void			makeSound( void ) const;
@@ -66,6 +66,6 @@ class WrongAnimal
 
 };
 
-std::ostream &			operator<<( std::ostream & o, Animal const & i );
+std::ostream &			operator<<( std::ostream & o, AAnimal const & i );
 
 #endif /* ********************************************************** ANIMAL_H */

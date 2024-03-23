@@ -6,7 +6,7 @@
 /*   By: zvan-de- <zvan-de-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/15 16:35:33 by zvan-de-          #+#    #+#             */
-/*   Updated: 2024/03/22 12:47:12 by zvan-de-         ###   ########.fr       */
+/*   Updated: 2024/03/22 13:39:09 by zvan-de-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Cat::Cat(): Animal(), _brainptr( NULL ) {
-	Animal::type = "Cat";
+Cat::Cat(): AAnimal(), _brainptr( NULL ) {
+	AAnimal::type = "Cat";
 	this->_brainptr = new Brain();
 	std::cout << G << "Cat Default constructor called" << END << std::endl;
 }
 
-Cat::Cat( const Cat & src ): Animal(), _brainptr(NULL) {
+Cat::Cat( const Cat & src ): AAnimal(), _brainptr(NULL) {
 	std::cout << G << "Cat Copy constructor called" << END << std::endl;
 	if (src._brainptr)
 		this->_brainptr = new Brain(*src._brainptr);

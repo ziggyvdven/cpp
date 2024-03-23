@@ -6,7 +6,7 @@
 /*   By: zvan-de- <zvan-de-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 14:31:14 by zvan-de-          #+#    #+#             */
-/*   Updated: 2024/03/21 20:35:23 by zvan-de-         ###   ########.fr       */
+/*   Updated: 2024/03/22 12:49:29 by zvan-de-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,11 @@ class Cat : public Animal
 		Cat &			operator=( Cat const & rhs );
 
 		std::string 	getType() const;
-		void			makeSound( void ) const;
 		std::string 	getIdea(int i) const;
 		void		 	setIdea(int i, std::string idea);
 
+		virtual void	makeSound( void ) const;
+		
 	protected:
 
 
