@@ -6,7 +6,7 @@
 /*   By: zvan-de- <zvan-de-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 17:03:20 by zvan-de-          #+#    #+#             */
-/*   Updated: 2024/03/28 16:25:54 by zvan-de-         ###   ########.fr       */
+/*   Updated: 2024/03/29 12:16:39 by zvan-de-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int main() {
 	src->learnMateria(new Cure());
 	src->learnMateria(new Ice());
 	src->learnMateria(new Ice());
-	std::cout << "Trying to learn 5th materia" << std::endl;
+	std::cout << std::endl << "Trying to learn 5th materia" << std::endl;
 	src->learnMateria(new Ice());
 
 	
@@ -48,7 +48,8 @@ int main() {
 	me->equip(tmp);
 	tmp = src->createMateria("cure"); 
 	me->equip(tmp);
-	tmp = src->createMateria("cure"); 
+	tmp = src->createMateria("cure");
+	std::cout << std::endl << "Trying to equip 5th materia" << std::endl;
 	me->equip(tmp);
 	me->equip(tmp);
 	me->equip(attack);
@@ -65,7 +66,7 @@ int main() {
 	src1->learnMateria(new Ice()); 
 	src1->learnMateria(new Cure());
 	
-	std::cout << "creating MaterialSource: 3" << std::endl;
+	std::cout << "creating MaterialSource: 3 (copy constructor)" << std::endl;
 	MateriaSource src3(*src1);
 	std::cout << "DELETING MaterialSource: 1" << std::endl;
 	delete src1;

@@ -6,7 +6,7 @@
 #    By: zvan-de- <zvan-de-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/11 12:46:32 by zvan-de-          #+#    #+#              #
-#    Updated: 2024/03/22 14:09:54 by zvan-de-         ###   ########.fr        #
+#    Updated: 2024/03/29 12:18:00 by zvan-de-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ R 	= \033[0;31m
 #------------------------------------------------------------------------------#
 
 # Program name
-NAME 			= a.out
+NAME 			= aanimals
 
 # Compiler and flags
 CC				= c++
@@ -97,7 +97,7 @@ fclean: clean
 
 re: fclean all
 
-.PHONY:		all, clean, fclean, re
+.PHONY:		all clean fclean re
 
 # VALGRIND #
 

@@ -6,7 +6,7 @@
 /*   By: zvan-de- <zvan-de-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 14:27:58 by zvan-de-          #+#    #+#             */
-/*   Updated: 2024/03/20 14:28:02 by zvan-de-         ###   ########.fr       */
+/*   Updated: 2024/03/29 11:54:13 by zvan-de-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Animal::Animal(): type("animal"){
+Animal::Animal(): type("Animal"){
 	std::cout << G << "Animal Default constructor called" << END << std::endl;
 }
 

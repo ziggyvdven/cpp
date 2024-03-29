@@ -6,11 +6,13 @@
 /*   By: zvan-de- <zvan-de-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 17:06:43 by zvan-de-          #+#    #+#             */
-/*   Updated: 2024/03/28 18:48:41 by zvan-de-         ###   ########.fr       */
+/*   Updated: 2024/03/29 18:29:18 by zvan-de-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Bureaucrat.hpp"
+#include "../includes/Form.hpp"
+# include <iomanip>
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
@@ -58,7 +60,9 @@ Bureaucrat &				Bureaucrat::operator=( Bureaucrat const & rhs )
 
 std::ostream &			operator<<( std::ostream & o, Bureaucrat const & i )
 {
-	o << i.getName() << ", bureaucrat grade " << i.getGrade() << ".";
+	o << BOLD << "      NAME|     GRADE|" << END << std::endl;
+	o << std::right << std::setw(10) << i.getName() << '|';
+	o << std::right << std::setw(10) << i.getGrade() << '|';
 	return o;
 }
 
@@ -70,16 +74,16 @@ std::ostream &			operator<<( std::ostream & o, Bureaucrat const & i )
 void				Bureaucrat::incrementGrade(){
     if (_grade > 1)
             _grade--;
-        else
-            throw GradeTooHighException();
+    else
+        throw GradeTooHighException();
 	
 }
 
 void				Bureaucrat::decrementGrade(){
 	if (_grade < 150)
             _grade++;
-        else
-            throw GradeTooLowException();
+    else
+        throw GradeTooLowException();
 	
 }
 
@@ -90,6 +94,16 @@ const char* Bureaucrat::GradeTooLowException::what() const throw(){
 const char* Bureaucrat::GradeTooHighException::what() const throw(){
      return("GRADE TOO HIGH");
 };
+
+void				Bureaucrat::signForm(Form& form) const{
+	try {
+		if (form.beSigned(*this))
+			std::cout << G << _name << " signed Form " << form.getName() << END << std::endl;
+	}
+	catch (std::exception & e) {
+		std::cout << R << _name << " could not sign Form " << form.getName() << " [" << e.what() << "]" << END << std::endl;
+	}
+}
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------

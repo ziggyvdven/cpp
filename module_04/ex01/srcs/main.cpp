@@ -6,7 +6,7 @@
 /*   By: zvan-de- <zvan-de-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 17:03:20 by zvan-de-          #+#    #+#             */
-/*   Updated: 2024/03/22 14:02:05 by zvan-de-         ###   ########.fr       */
+/*   Updated: 2024/03/29 12:06:39 by zvan-de-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	testshallowness(){
 
-	std::cout << BOLD << "TEST 2 DEEP COPIES:" << END << std::endl;
+	std::cout << std::endl << BOLD << "TEST 2 DEEP COPIES:" << END << std::endl;
 	std::cout << "Creating Dog instance: Idefix" << std::endl;
 	Dog* idefix = new Dog();
 	std::cout << "Creating Cat instance: Garfield" << std::endl;
@@ -39,7 +39,7 @@ void	testshallowness(){
 	std::cout << "Creating Dog instance: Snoopy" << std::endl;
 	Dog* snoopy = new Dog();
 	
-	std::cout << "Deep copying idefix to snoopy" << std::endl;
+	std::cout << "Deep copying idefix to snoopy (assignment)" << std::endl;
 	*snoopy = *idefix; // creates a deep copy
 	std::cout << std::endl;
 	std::cout << idefix->getType() << ": snoopy idea[0]:" << snoopy->getIdea(0) << std::endl;
@@ -62,11 +62,17 @@ void	testshallowness(){
 
 	std::cout << garfield->getType() << ": Garfield setting idea[0] to: GHJFSGJdfgs LASAGNA!!" << std::endl;
 	garfield->setIdea(0, "GHJFSGJdfgs LASAGNA!!");
-	std::cout << garfield->getType() << ": Garfield idea[1]:" << garfield->getIdea(0) << std::endl;
+	std::cout << garfield->getType() << ": Garfield idea[0]:" << garfield->getIdea(0) << std::endl;
+
+	std::cout << std::endl << "Deep copying garfield to tom (copy constructor)" << std::endl;
+	Cat tom(*garfield);
+	std::cout << tom.getType() << ": tom idea[0]:" << tom.getIdea(0) << std::endl;
+	std::cout << BOLD << "Deleting garfield:" << END << std::endl;
+	delete garfield;
+	std::cout << tom.getType() << ": tom idea[0]:" << tom.getIdea(0) << std::endl;
 		
 	std::cout << BOLD << "Deleting:" << END << std::endl;
 	delete idefix;//should not create a leak 
-	delete garfield;
 	delete snoopy;
 	return ;
 }

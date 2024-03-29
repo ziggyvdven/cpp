@@ -6,7 +6,7 @@
 /*   By: zvan-de- <zvan-de-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 14:10:37 by zvan-de-          #+#    #+#             */
-/*   Updated: 2024/03/28 15:49:03 by zvan-de-         ###   ########.fr       */
+/*   Updated: 2024/03/29 12:15:46 by zvan-de-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 
 MateriaSource::MateriaSource(): IMateriaSource()
 {
-	std::cout << G << "Cure Default constructor called" << END << std::endl;
+	std::cout << G << "Materiasource Default constructor called" << END << std::endl;
 	_materias[0] = "ice";
     _materias[1] = "cure";
 }

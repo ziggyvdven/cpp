@@ -6,7 +6,7 @@
 /*   By: zvan-de- <zvan-de-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 17:06:34 by zvan-de-          #+#    #+#             */
-/*   Updated: 2024/03/28 18:30:17 by zvan-de-         ###   ########.fr       */
+/*   Updated: 2024/03/29 12:51:27 by zvan-de-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,12 @@ class Bureaucrat
 
 		class GradeTooLowException : public std::exception{
 			public:
-				virtual const char*what() const throw();	
+				virtual const char* what() const throw();	
 		};
 
 		class GradeTooHighException : public std::exception{
 			public:
-				virtual const char*what() const throw();
+				virtual const char* what() const throw();
 		};
 
 	private:
