@@ -6,7 +6,7 @@
 /*   By: zvan-de- <zvan-de-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 15:41:21 by zvan-de-          #+#    #+#             */
-/*   Updated: 2024/03/14 20:35:50 by zvan-de-         ###   ########.fr       */
+/*   Updated: 2024/03/28 13:34:05 by zvan-de-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ class FragTrap : public ClapTrap {
 		FragTrap &		operator=( const FragTrap &rhs );
 
 		void 			highFivesGuys(void);
-
 
 	};
 

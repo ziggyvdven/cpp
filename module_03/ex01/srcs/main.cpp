@@ -6,11 +6,11 @@
 /*   By: zvan-de- <zvan-de-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 17:03:20 by zvan-de-          #+#    #+#             */
-/*   Updated: 2024/03/14 20:28:17 by zvan-de-         ###   ########.fr       */
+/*   Updated: 2024/03/28 12:12:12 by zvan-de-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/FragTrap.hpp"
+#include "../includes/ScavTrap.hpp"
 
 int main()
 {
@@ -63,6 +63,7 @@ int main()
 		sith.beRepaired(5000);
 		std::cout << "ScavTrap " << BOLD << sith.getName() << END << " has " << sith.getHit() << " Hitpoints." << std::endl;
 		std::cout << "ScavTrap " << BOLD << sith.getName() << END << " has " << sith.getEnergy() << " Energy." << std::endl;
+		sith.beRepaired(-5000);
 		sith.guardGate();
 	}
 	

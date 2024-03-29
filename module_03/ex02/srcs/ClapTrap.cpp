@@ -6,7 +6,7 @@
 /*   By: zvan-de- <zvan-de-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 15:46:51 by zvan-de-          #+#    #+#             */
-/*   Updated: 2024/03/14 20:18:48 by zvan-de-         ###   ########.fr       */
+/*   Updated: 2024/03/28 13:35:19 by zvan-de-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,6 +108,8 @@ ClapTrap::ClapTrap(std::string const Name) : _Name(Name), _Hit(10), _Energy(10),
 	
 	void ClapTrap::takeDamage(unsigned int amount){
 
+		if (amount > INT_MAX)
+			return ;
 		if (this->_Hit >= amount)
 			this->_Hit -= amount;
 		else
@@ -118,6 +120,8 @@ ClapTrap::ClapTrap(std::string const Name) : _Name(Name), _Hit(10), _Energy(10),
 
 	void ClapTrap::beRepaired(unsigned int amount){
 
+		if (amount > INT_MAX)
+			return ;
 		if (!this->isAwake())
 			std::cout << "ClapTrap " << BOLD << this->_Name << END << " cannot be repaired" << B << " (No energy) " << END << std::endl;
 		if (!this->isAlive())

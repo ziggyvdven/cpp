@@ -6,7 +6,7 @@
 #    By: zvan-de- <zvan-de-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/11 12:46:32 by zvan-de-          #+#    #+#              #
-#    Updated: 2024/03/22 18:28:01 by zvan-de-         ###   ########.fr        #
+#    Updated: 2024/03/28 17:06:00 by zvan-de-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ NAME 			= materia
 
 # Compiler and flags
 CC				= c++
-CFLAGS			= -Wall -Wextra -Werror -std=c++98 -g
+CFLAGS			= -Wall -Wextra -Werror -std=c++98
 
 # others
 RM				= rm -f

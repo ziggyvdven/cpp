@@ -6,7 +6,7 @@
 /*   By: zvan-de- <zvan-de-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 14:10:43 by zvan-de-          #+#    #+#             */
-/*   Updated: 2024/03/22 20:20:38 by zvan-de-         ###   ########.fr       */
+/*   Updated: 2024/03/28 15:47:21 by zvan-de-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,16 @@
 # define MATERIALSOURCE_HPP
 
 # include "./AMateria.hpp"
+
+/* Default size of memory */
+# ifndef	S_MEMORY
+#  define	S_MEMORY	4
+# endif	
+
+/* Default number of materials */
+# ifndef	N_MATERIALS
+#  define	N_MATERIALS	2
+# endif
 
 class IMateriaSource
 {
@@ -39,9 +49,8 @@ class MateriaSource : public IMateriaSource
 		virtual void 			learnMateria(AMateria*);
 		virtual AMateria* 		createMateria(std::string const & type);
 	
-
-
 	private:
+		std::string _materias[N_MATERIALS];
 };
 
 

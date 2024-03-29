@@ -6,7 +6,7 @@
 /*   By: zvan-de- <zvan-de-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 15:46:51 by zvan-de-          #+#    #+#             */
-/*   Updated: 2024/03/14 20:18:48 by zvan-de-         ###   ########.fr       */
+/*   Updated: 2024/03/28 12:02:15 by zvan-de-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ ClapTrap::ClapTrap(std::string const Name) : _Name(Name), _Hit(10), _Energy(10),
 
 /*MEMBER FUNCTIONS ************************************************************/
 
-	bool ClapTrap::isAlive( void ) const{
+	bool ClapTrap::_isAlive( void ) const{
 
 		if (this->_Hit > 0)
 			return ( true );
@@ -84,7 +84,7 @@ ClapTrap::ClapTrap(std::string const Name) : _Name(Name), _Hit(10), _Energy(10),
 			return ( false );
 	}
 
-	bool ClapTrap::isAwake( void ) const{
+	bool ClapTrap::_isAwake( void ) const{
 
 		if (this->_Energy > 0)
 			return ( true );
@@ -94,11 +94,11 @@ ClapTrap::ClapTrap(std::string const Name) : _Name(Name), _Hit(10), _Energy(10),
 
 	void ClapTrap::attack(const std::string& target){
 
-		if (!this->isAwake())
+		if (!this->_isAwake())
 			std::cout << "ClapTrap " << BOLD << this->_Name << END << " cannot attack." << B << " (No energy) " << END << std::endl;
-		if (!this->isAlive())
+		if (!this->_isAlive())
 			std::cout << "ClapTrap " << BOLD << this->_Name << END << " cannot attack." << R << " (Death) " << END << std::endl;
-		if (this->isAwake() && this->isAlive())
+		if (this->_isAwake() && this->_isAlive())
 		{
 			this->_Energy -= 1;
 			std::cout << "ClapTrap " << BOLD << this->_Name << END << " attacks " << target << ", causing " << _Attack << " points of damage!" << std::endl;
@@ -108,6 +108,8 @@ ClapTrap::ClapTrap(std::string const Name) : _Name(Name), _Hit(10), _Energy(10),
 	
 	void ClapTrap::takeDamage(unsigned int amount){
 
+		if (amount > INT_MAX)
+			return ;
 		if (this->_Hit >= amount)
 			this->_Hit -= amount;
 		else
@@ -118,11 +120,13 @@ ClapTrap::ClapTrap(std::string const Name) : _Name(Name), _Hit(10), _Energy(10),
 
 	void ClapTrap::beRepaired(unsigned int amount){
 
-		if (!this->isAwake())
+		if (amount > INT_MAX)
+			return ;
+		if (!this->_isAwake())
 			std::cout << "ClapTrap " << BOLD << this->_Name << END << " cannot be repaired" << B << " (No energy) " << END << std::endl;
-		if (!this->isAlive())
+		if (!this->_isAlive())
 			std::cout << "ClapTrap " << BOLD << this->_Name << END << " cannot be repaired" << R << " (DEATH) " << END << std::endl;
-		if (this->isAwake() && this->isAlive())
+		if (this->_isAwake() && this->_isAlive())
 		{
 			this->_Hit += amount;
 			this->_Energy -= 1;

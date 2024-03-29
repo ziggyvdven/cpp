@@ -6,7 +6,7 @@
 /*   By: zvan-de- <zvan-de-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 17:03:20 by zvan-de-          #+#    #+#             */
-/*   Updated: 2024/03/14 20:57:03 by zvan-de-         ###   ########.fr       */
+/*   Updated: 2024/03/28 13:39:11 by zvan-de-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,11 @@ int main()
 		jedi.attack("Vader");
 		jedi.attack("Vader");
 		jedi.highFivesGuys();
+		std::cout << "ClapTrap " << BOLD << jedi.getName() << END << " has " << jedi.getHit() << " Hitpoints." << std::endl;
+		jedi.takeDamage(200);
+		std::cout << "ClapTrap " << BOLD << jedi.getName() << END << " has " << jedi.getHit() << " Hitpoints." << std::endl;
+		jedi.highFivesGuys();
+		
 	}
 	
 	return (0);

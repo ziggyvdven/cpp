@@ -6,7 +6,7 @@
 /*   By: zvan-de- <zvan-de-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 14:10:37 by zvan-de-          #+#    #+#             */
-/*   Updated: 2024/03/22 19:51:55 by zvan-de-         ###   ########.fr       */
+/*   Updated: 2024/03/28 15:33:17 by zvan-de-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ Cure::~Cure()
 
 Cure &				Cure::operator=( Cure const & rhs )
 {
-	if ( this != &rhs )
+	if ( this->type != rhs.getType() )
 	{
 		this->type = rhs.getType();
 	}

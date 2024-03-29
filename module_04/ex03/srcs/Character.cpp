@@ -6,7 +6,7 @@
 /*   By: zvan-de- <zvan-de-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 14:10:37 by zvan-de-          #+#    #+#             */
-/*   Updated: 2024/03/22 20:05:32 by zvan-de-         ###   ########.fr       */
+/*   Updated: 2024/03/28 14:38:12 by zvan-de-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -144,10 +144,10 @@ void 		Character::equip(AMateria* m){
 					{
 						switch (j){
 							case 0:
-								(inventory[i] = new Ice());
+								(inventory[i] = m);
 								break;
 							case 1:
-								(inventory[i] = new Cure());
+								(inventory[i] = m);
 								break;
 							default:
 								std::cout << "Material does not exist" << std::endl;

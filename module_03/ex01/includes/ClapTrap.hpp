@@ -6,7 +6,7 @@
 /*   By: zvan-de- <zvan-de-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 15:41:21 by zvan-de-          #+#    #+#             */
-/*   Updated: 2024/03/14 20:17:03 by zvan-de-         ###   ########.fr       */
+/*   Updated: 2024/03/28 12:01:15 by zvan-de-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ class ClapTrap{
 		unsigned int	_Hit;
 		unsigned int	_Energy;
 		unsigned int	_Attack;
+		bool 			_isAlive( void ) const;
+		bool 			_isAwake( void ) const;
 	
 	public:
 						ClapTrap( void );
@@ -47,8 +49,6 @@ class ClapTrap{
 		unsigned int 	getEnergy( void ) const;
 		unsigned int 	getAttack( void ) const;
 
-		bool 			isAlive( void ) const;
-		bool 			isAwake( void ) const;
 			
 	};
 

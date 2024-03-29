@@ -6,7 +6,7 @@
 #    By: zvan-de- <zvan-de-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/11 12:46:32 by zvan-de-          #+#    #+#              #
-#    Updated: 2024/03/28 13:45:07 by zvan-de-         ###   ########.fr        #
+#    Updated: 2024/03/28 19:03:17 by zvan-de-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,11 +21,10 @@ R 	= \033[0;31m
 #------------------------------------------------------------------------------#
 
 # Program name
-NAME 			= diamondTrap
-
+NAME 			= forms
 # Compiler and flags
 CC				= c++
-CFLAGS			= -Wall -Wextra -Werror -Wshadow -std=c++98
+CFLAGS			= -Wall -Wextra -Werror -std=c++98
 
 # others
 RM				= rm -f

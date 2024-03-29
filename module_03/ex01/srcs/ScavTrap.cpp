@@ -6,7 +6,7 @@
 /*   By: zvan-de- <zvan-de-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 15:46:51 by zvan-de-          #+#    #+#             */
-/*   Updated: 2024/03/14 20:14:01 by zvan-de-         ###   ########.fr       */
+/*   Updated: 2024/03/28 12:11:26 by zvan-de-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,14 +71,14 @@ ScavTrap::ScavTrap(std::string const Name) : ClapTrap( Name ) {
 
 	void 	ScavTrap::attack(const std::string& target){
 
-		if (!this->isAwake())
+		if (!this->_isAwake())
 			std::cout << "ClapTrap " << BOLD << this->_Name << END << " cannot attack" << B << " (No energy) " << END << std::endl;
-		if (!this->isAlive())
+		if (!this->_isAlive())
 			std::cout << "ClapTrap " << BOLD << this->_Name << END << " cannot attack" << R << " (Death) " << END << std::endl;
-		if (isAwake() && isAlive())
+		if (_isAwake() && _isAlive())
 		{
 			this->_Energy -= 1;
-			std::cout << "ScavTrap " << BOLD << this->_Name << END << " attacks " << target << ", causing " << _Attack << " points of damage!" << std::endl;
+			std::cout << "ScavTrap " << BOLD << this->_Name << END << " attacks " << target << " with fury, causing " << _Attack << " points of damage!" << std::endl;
 		}
 		return ;
 	}
