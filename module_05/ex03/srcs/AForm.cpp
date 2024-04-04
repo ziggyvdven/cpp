@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.cpp                                           :+:      :+:    :+:   */
+/*   AForm.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zvan-de- <zvan-de-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 19:04:04 by zvan-de-          #+#    #+#             */
-/*   Updated: 2024/04/04 18:03:43 by zvan-de-         ###   ########.fr       */
+/*   Updated: 2024/04/03 15:42:03 by zvan-de-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/Form.hpp"
+#include "../includes/AForm.hpp"
 # include <iomanip>
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Form::Form(): _name(""), _signed(false), _toSign(150), _toExec(0){
+AForm::AForm(): _name(""), _signed(false), _toSign(150), _toExec(0){
 }
 
-Form::Form( const Form & src ): _name(src._name), _toSign(src._toSign), _toExec(src._toExec){
+AForm::AForm( const AForm & src ): _name(src._name), _toSign(src._toSign), _toExec(src._toExec){
 	if (src._toSign > 150 || src._toExec > 150)
 		throw GradeTooLowException();
 	if (src._toSign < 1 || src._toExec < 1)
@@ -28,7 +28,7 @@ Form::Form( const Form & src ): _name(src._name), _toSign(src._toSign), _toExec(
 	*this = src;
 }
 
-Form::Form(std::string name, unsigned int toSign, unsigned int toExec): _name(name), _signed(false), _toSign(toSign), _toExec(toExec){
+AForm::AForm(std::string name, unsigned int toSign, unsigned int toExec): _name(name), _signed(false), _toSign(toSign), _toExec(toExec){
 
 	if (toSign > 150 || toExec > 150)
 		throw GradeTooLowException();
@@ -41,7 +41,7 @@ Form::Form(std::string name, unsigned int toSign, unsigned int toExec): _name(na
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-Form::~Form()
+AForm::~AForm()
 {
 }
 
@@ -50,7 +50,7 @@ Form::~Form()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-Form &				Form::operator=( Form const & rhs )
+AForm &				AForm::operator=( AForm const & rhs )
 {
 	if ( this != &rhs )
 	{
@@ -59,7 +59,7 @@ Form &				Form::operator=( Form const & rhs )
 	return *this;
 }
 
-std::ostream &			operator<<( std::ostream & o, Form const & i )
+std::ostream &			operator<<( std::ostream & o, AForm const & i )
 {
 	o << BOLD << "      NAME|    SIGNED|    toSIGN|    toEXEC" << END << std::endl;
 	o << std::right << std::setw(10) << i.getName() << '|';
@@ -74,56 +74,66 @@ std::ostream &			operator<<( std::ostream & o, Form const & i )
 ** --------------------------------- METHODS ----------------------------------
 */
 
-const char* Form::GradeTooLowException::what() const throw(){
+const char* AForm::GradeTooLowException::what() const throw(){
     return("GRADE TOO LOW");
 };
 
-const char* Form::GradeTooHighException::what() const throw(){
+const char* AForm::GradeTooHighException::what() const throw(){
      return("GRADE TOO HIGH");
 };
 
-const char* Form::FormAlreadySigned::what() const throw(){
+const char* AForm::FormAlreadySigned::what() const throw(){
      return("ALREADY SIGNED");
 };
 
-bool			Form::beSigned(const Bureaucrat& worker){
-	if (&worker != nullptr) {
-		if (_signed)
-			throw FormAlreadySigned();
-		else if (_toSign < worker.getGrade())
-			throw GradeTooLowException();
-		else
-		{
-			_signed = true;
-			return (true);
-		}
-	}
+const char* AForm::FormNotSigned::what() const throw(){
+     return("NOT SIGNED");
+};
+
+bool				AForm::beSigned(const Bureaucrat& worker){
+	if (_signed)
+		throw FormAlreadySigned();
+	else if (_toSign < worker.getGrade())
+		throw GradeTooLowException();
 	else
-	{ 
-		std::cerr << "Error: Parameter is a null reference." << std::endl;
-		return false;
+	{
+		_signed = true;
+		return (true);
 	}
 	return false;
+}
+
+bool				AForm::canExec(const Bureaucrat& executor) const{
+	if (!getSigned())
+		throw FormNotSigned();
+	else if (get_toExec() < executor.getGrade())
+		throw GradeTooLowException();
+	return true;
 }
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */
 
-std::string			Form::getName() const{
+std::string			AForm::getName() const{
 	return (this->_name);
 }
 
-unsigned int		Form::get_toSign() const{
+unsigned int		AForm::get_toSign() const{
 	return (this->_toSign);
 }
 
-unsigned int		Form::get_toExec() const{
+unsigned int		AForm::get_toExec() const{
 	return (this->_toExec);
 }
 
-bool				Form::getSigned() const{
+bool				AForm::getSigned() const{
 	return (this->_signed);
+}
+
+void				AForm::setSigned(bool const sign){
+	this->_signed = sign;
+	return ;
 }
 
 /* ************************************************************************** */

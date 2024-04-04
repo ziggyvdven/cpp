@@ -6,12 +6,12 @@
 /*   By: zvan-de- <zvan-de-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 17:06:43 by zvan-de-          #+#    #+#             */
-/*   Updated: 2024/04/04 18:02:41 by zvan-de-         ###   ########.fr       */
+/*   Updated: 2024/04/04 17:56:51 by zvan-de-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Bureaucrat.hpp"
-#include "../includes/Form.hpp"
+#include "../includes/AForm.hpp"
 # include <iomanip>
 
 /*
@@ -95,14 +95,32 @@ const char* Bureaucrat::GradeTooHighException::what() const throw(){
      return("GRADE TOO HIGH");
 };
 
-void				Bureaucrat::signForm(Form& form) const{
+void				Bureaucrat::signForm(AForm& form) const{
 	if (&form != nullptr){
 		try {
 			if (form.beSigned(*this))
-				std::cout << G << _name << " signed Form " << form.getName() << END << std::endl;
+				std::cout << G << _name << " signed " << form.getName() << END << std::endl;
 		}
 		catch (std::exception & e) {
-			std::cout << R << _name << " could not sign Form " << form.getName() << " [" << e.what() << "]" << END << std::endl;
+			std::cout << R << _name << " could not sign " << form.getName() << " because [" << e.what() << "]" << END << std::endl;
+		}
+	}
+	else
+	{ 
+		std::cerr << "Error: Parameter is a null reference." << std::endl;
+		return ;
+	}
+}
+
+void				Bureaucrat::executeForm(AForm& form) const{
+	if (&form != nullptr)
+	{
+		try {
+			if (form.execute(*this))
+				std::cout << G << _name << " executed " << form.getName() << END << std::endl;
+		}
+		catch (std::exception & e) {
+			std::cout << R << _name << " could not exec " << form.getName() << " because [" << e.what() << "]" << END << std::endl;
 		}
 	}
 	else

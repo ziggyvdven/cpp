@@ -6,7 +6,7 @@
 /*   By: zvan-de- <zvan-de-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 17:06:34 by zvan-de-          #+#    #+#             */
-/*   Updated: 2024/04/03 15:32:04 by zvan-de-         ###   ########.fr       */
+/*   Updated: 2024/04/04 15:45:39 by zvan-de-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 # define B "\033[0;34m"
 # define R "\033[0;31m"
 
-class Form;
+class AForm;
 
 class Bureaucrat
 {
@@ -40,7 +40,8 @@ class Bureaucrat
 		unsigned int		getGrade() const;
 		void				incrementGrade();
 		void				decrementGrade();
-		void				signForm(Form& form) const;
+		void				signForm(AForm& form) const;
+		void				executeForm(AForm& form) const;
 
 		class GradeTooLowException : public std::exception{
 			public:
