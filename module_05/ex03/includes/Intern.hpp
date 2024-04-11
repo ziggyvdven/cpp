@@ -6,7 +6,7 @@
 /*   By: zvan-de- <zvan-de-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 14:10:43 by zvan-de-          #+#    #+#             */
-/*   Updated: 2024/04/04 17:32:46 by zvan-de-         ###   ########.fr       */
+/*   Updated: 2024/04/05 13:58:19 by zvan-de-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ class Intern
 		~Intern();
 
 		Intern &			operator=( Intern const & rhs );
-		AForm* 				makeForm(std::string const & form, std::string const & target);
+		AForm* 				makeForm(std::string const form, std::string const target);
 	
 	private:
 		std::string 		_forms[N_FORMS];

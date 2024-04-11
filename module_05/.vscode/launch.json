@@ -6,8 +6,8 @@
       "type": "lldb",
       "request": "launch",
       "args": [],
-      "cwd": "/Users/zvan-de-/42/cpp/module_05/ex02/srcs",
-      "program": "/Users/zvan-de-/42/cpp/module_05/ex02/srcs/build/Debug/outDebug"
+      "cwd": "/Users/zvan-de-/42/cpp/module_05/ex03/srcs",
+      "program": "/Users/zvan-de-/42/cpp/module_05/ex03/srcs/build/Debug/outDebug"
     }
   ]
 }

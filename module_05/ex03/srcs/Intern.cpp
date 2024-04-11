@@ -6,7 +6,7 @@
 /*   By: zvan-de- <zvan-de-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 14:10:37 by zvan-de-          #+#    #+#             */
-/*   Updated: 2024/04/04 18:13:32 by zvan-de-         ###   ########.fr       */
+/*   Updated: 2024/04/05 13:55:44 by zvan-de-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ Intern &				Intern::operator=( Intern const & rhs )
 */
 
 
-AForm* 			Intern::makeForm(std::string const & form, std::string const & target){
+AForm* 			Intern::makeForm(std::string const form, std::string const target){
 	 
  
 	for (int i = 0; i <  N_FORMS ; i++)
