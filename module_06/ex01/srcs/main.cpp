@@ -6,36 +6,35 @@
 /*   By: zvan-de- <zvan-de-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 17:07:54 by zvan-de-          #+#    #+#             */
-/*   Updated: 2024/04/12 12:44:13 by zvan-de-         ###   ########.fr       */
+/*   Updated: 2024/04/12 16:39:49 by zvan-de-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/Bureaucrat.hpp"
-#include "../includes/Intern.hpp"
-#include "../includes/AForm.hpp"
+#include "../includes/Serialize.hpp" 
+#include <stdio.h>
 
-
-using std::cout;
-using std::endl;
-using std::exception;
-
-int main()
+uintptr_t serialize(Data* ptr)
 {
-	Bureaucrat worker1 = Bureaucrat("Spongebob", 1);
-    Intern  someRandomIntern;
-    AForm*   rrf;
-	rrf = someRandomIntern.makeForm("presidential pardon", "Bender");
-	worker1.signForm(*rrf);
-	worker1.executeForm(*rrf);
-	
+	return (reinterpret_cast<uintptr_t>(ptr));
+}
 
-	AForm*   ptr2;
-	ptr2 = someRandomIntern.makeForm("shrubbery creation", "Bender2");
-	rrf = ptr2;
-	worker1.signForm(*rrf);
-	// worker1.executeForm(*rrf);
-	worker1.executeForm(*ptr2);
-	Intern  someRandomIntern2(someRandomIntern);
+Data* deserialize(uintptr_t raw)
+{
+	return (reinterpret_cast<Data*>(raw));
+}
+
+int main( void )
+{
+	Data	*a = new Data;
 	
+	a->i = 42;
+	a->str = "TEST";
+	uintptr_t p = serialize(a);
+	cout << &a << endl;
+	printf("p = %lu\n", p);
+	Data *ptr = deserialize(p);
+	std::cout << ptr->str << std::endl;
+	std::cout << ptr->i << std::endl;
+	delete a;
 	return (0);
 }

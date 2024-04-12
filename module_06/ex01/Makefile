@@ -6,7 +6,7 @@
 #    By: zvan-de- <zvan-de-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/11 12:46:32 by zvan-de-          #+#    #+#              #
-#    Updated: 2024/04/12 12:10:12 by zvan-de-         ###   ########.fr        #
+#    Updated: 2024/04/12 16:28:26 by zvan-de-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,8 +21,7 @@ R 	= \033[0;31m
 #------------------------------------------------------------------------------#
 
 # Program name
-NAME 			= bureaucrat
-
+NAME 			= serialize
 # Compiler and flags
 CC				= c++
 CFLAGS			= -Wall -Wextra -Werror -std=c++98
@@ -97,7 +96,7 @@ fclean: clean
 
 re: fclean all
 
-.PHONY:		all clean fclean re
+.PHONY:		all, clean, fclean, re
 
 # VALGRIND #
 

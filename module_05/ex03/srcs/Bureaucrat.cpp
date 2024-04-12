@@ -6,7 +6,7 @@
 /*   By: zvan-de- <zvan-de-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 17:06:43 by zvan-de-          #+#    #+#             */
-/*   Updated: 2024/04/04 17:43:32 by zvan-de-         ###   ########.fr       */
+/*   Updated: 2024/04/12 12:43:54 by zvan-de-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,7 @@ void				Bureaucrat::signForm(AForm& form) const{
 		}
 	}
 	else
-		std::cerr << "Error: Parameter is a null reference." << std::endl;
+		std::cerr << "Error: Reference error." << std::endl;
 }
 
 void				Bureaucrat::executeForm(AForm& form) const{
@@ -122,7 +122,7 @@ void				Bureaucrat::executeForm(AForm& form) const{
 		}
 	}
 	else
-		std::cerr << "Error: Parameter is a null reference." << std::endl;
+		std::cerr << "Error: Reference error." << std::endl;
 }
 
 /*

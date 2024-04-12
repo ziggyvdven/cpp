@@ -6,7 +6,7 @@
 /*   By: zvan-de- <zvan-de-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 17:07:54 by zvan-de-          #+#    #+#             */
-/*   Updated: 2024/03/28 18:56:08 by zvan-de-         ###   ########.fr       */
+/*   Updated: 2024/04/12 12:36:48 by zvan-de-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ int main()
 
 	try {
 		Bureaucrat worker("Squidward", 150);
+		std::cout << worker << std::endl;
 		worker.decrementGrade();
 	}
 	catch (std::exception & e) {
@@ -39,10 +40,11 @@ int main()
 
 	try {
 		Bureaucrat worker("Squidward", 1);
+		std::cout << worker << std::endl;
 		worker.incrementGrade();
 	}
 	catch (std::exception & e) {
-		std::cout << "Could not decrement Bureaucrat:   [" << e.what() << "]" << std::endl;
+		std::cout << "Could not increment Bureaucrat:   [" << e.what() << "]" << std::endl;
 	}
 
 	try {
@@ -51,6 +53,7 @@ int main()
 		worker.decrementGrade();
 		std::cout << worker << std::endl;
 		worker.incrementGrade();
+		std::cout << worker << std::endl;
 		worker.incrementGrade();
 	}
 	catch (std::exception & e) {

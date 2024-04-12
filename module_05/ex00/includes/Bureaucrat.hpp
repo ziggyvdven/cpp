@@ -6,7 +6,7 @@
 /*   By: zvan-de- <zvan-de-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 17:06:34 by zvan-de-          #+#    #+#             */
-/*   Updated: 2024/03/29 12:51:27 by zvan-de-         ###   ########.fr       */
+/*   Updated: 2024/04/12 12:21:09 by zvan-de-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ class Bureaucrat
 
 	public:
 
-		Bureaucrat();
 		Bureaucrat( Bureaucrat const & src );
 		Bureaucrat(const std::string name, unsigned int grade);
 		~Bureaucrat();
@@ -46,6 +45,7 @@ class Bureaucrat
 
 	private:
 
+		Bureaucrat();
 		const std::string	_name;
 		unsigned int		_grade;
 };

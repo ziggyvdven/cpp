@@ -6,7 +6,7 @@
 /*   By: zvan-de- <zvan-de-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 13:20:22 by zvan-de-          #+#    #+#             */
-/*   Updated: 2024/04/11 19:23:20 by zvan-de-         ###   ########.fr       */
+/*   Updated: 2024/04/12 15:41:32 by zvan-de-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,6 @@ class Converter
 		
 };
 
-// std::ostream &			operator<<( std::ostream & o, Converter const & i );
+std::ostream &			operator<<( std::ostream & o, Converter const & i );
 
 #endif /* ******************************************************* CONVERTER_H */
