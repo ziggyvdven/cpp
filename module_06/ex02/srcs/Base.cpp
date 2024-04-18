@@ -6,11 +6,15 @@
 /*   By: zvan-de- <zvan-de-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 13:20:22 by zvan-de-          #+#    #+#             */
-/*   Updated: 2024/04/12 16:54:57 by zvan-de-         ###   ########.fr       */
+/*   Updated: 2024/04/17 20:39:41 by zvan-de-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Base.hpp" 
+
+Base::~Base()
+{
+}
 
 Base * generate(void)
 {
@@ -18,29 +22,54 @@ Base * generate(void)
 	int random = rand() % 3;
 	switch (random){
 		case 0:
-			std::cout << "A creates " <<  std::endl;
+			cout << "Pointer to Object A created" << endl;
 			return (new A());
-			break;
 		case 1:
-			std::cout << "B creates " << std::endl;
+			cout << "Pointer to Object B created" << endl;
 			return (new B());
-			break;
 		case 2:
-			std::cout << "C creates "  << std::endl;
+			cout << "Pointer to Object C created" << endl;
 			return (new C());
-			break;
 		default:
-			std::cout << "Form does not exist" << std::endl;
-			break;
+			throw (std::runtime_error("RANDOMIZER FAILED"));
 	}
+	throw (std::runtime_error("RANDOMIZER FAILED"));
 }
 
-void identify(Base* p)
+void identify(Base* ptr)
 {
+	if (!ptr)
+		return;
+	if (dynamic_cast<A*>(ptr))
+		cout << "A" << endl;
+	if (dynamic_cast<B*>(ptr))
+		cout << "B" << endl;
+	if (dynamic_cast<C*>(ptr))
+		cout << "C" << endl;
 	
 }
 
-void identify(Base& p)
+void identify(Base& ref)
 {
-
+	try
+	{	
+		(void)(dynamic_cast<A&>(ref));
+		std::cout << "A" << std::endl;
+		return ;
+	}
+	catch (std::exception& e) {}
+	try
+	{
+		(void)(dynamic_cast<B&>(ref));
+		std::cout << "B" << std::endl;
+		return ;
+	}
+	catch (std::exception& e) {}
+	try
+	{
+		(void)(dynamic_cast<C&>(ref));
+		std::cout << "C" << std::endl;
+		return ;
+	}
+	catch (std::exception& e) {}
 }

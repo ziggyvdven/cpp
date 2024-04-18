@@ -6,7 +6,7 @@
 /*   By: zvan-de- <zvan-de-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 13:20:22 by zvan-de-          #+#    #+#             */
-/*   Updated: 2024/04/12 15:41:32 by zvan-de-         ###   ########.fr       */
+/*   Updated: 2024/04/17 20:43:39 by zvan-de-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,5 @@ class Converter
 		void 			(Converter::*_func[6])(string input);
 		
 };
-
-std::ostream &			operator<<( std::ostream & o, Converter const & i );
 
 #endif /* ******************************************************* CONVERTER_H */

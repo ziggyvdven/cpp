@@ -6,7 +6,7 @@
 #    By: zvan-de- <zvan-de-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/11 12:46:32 by zvan-de-          #+#    #+#              #
-#    Updated: 2024/04/17 19:58:46 by zvan-de-         ###   ########.fr        #
+#    Updated: 2024/04/17 21:09:08 by zvan-de-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ R 	= \033[0;31m
 #------------------------------------------------------------------------------#
 
 # Program name
-NAME 			= typeinfo
+NAME 			= template
 # Compiler and flags
 CC				= c++
 CFLAGS			= -Wall -Wextra -Werror -std=c++98
