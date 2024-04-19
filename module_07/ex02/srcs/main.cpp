@@ -6,25 +6,32 @@
 /*   By: zvan-de- <zvan-de-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 17:07:54 by zvan-de-          #+#    #+#             */
-/*   Updated: 2024/04/18 16:27:44 by zvan-de-         ###   ########.fr       */
+/*   Updated: 2024/04/19 17:44:50 by zvan-de-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/whatever.hpp" 
-#include "stdio.h"
+#include "../includes/Array.hpp" 
 
 int main()
 {
-	int a = 2;
-	int b = 3;
-	swap( a, b );
-	cout << "a = " << a << ", b = " << b << endl;
-	cout << "min( a, b ) = " << min<int>( a, b ) << endl;
-	cout << "max( a, b ) = " << max<int>( a, b ) << endl;
-	string c = "chaine1";
-	string d = "chaine2";
-	swap(c, d);
-	cout << "c = " << c << ", d = " << d << endl;
-	cout << "min( c, d ) = " << ::min<string>( c, d ) << endl;
-	cout << "max( c, d ) = " << ::max<string>( c, d ) << endl;
+	Array<> arr(5);
+	cout << arr << endl;
+	// cout << arr.size() << endl;
+	// Array<> arr2;
+	// Array<string> arr3(3);
+	// Array<int*> arr4(5);
+
+	// arr4[1] = new int(1);
+	// arr3[0] = "test";
+	// cout << arr3[0] << endl;
+	// cout << arr << endl;
+	// arr[2] = 5;	
+	// arr2 = arr;
+	// cout << arr << endl;
+	// cout << arr[2] << endl;
+	// cout << arr2[2] << endl;
+	// arr[2] = 3;
+	// cout << arr[2] << endl;
+	// cout << arr2[2] << endl;
+	return (0);
 }
