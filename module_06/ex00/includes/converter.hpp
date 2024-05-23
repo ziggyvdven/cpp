@@ -6,7 +6,7 @@
 /*   By: zvan-de- <zvan-de-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 13:20:22 by zvan-de-          #+#    #+#             */
-/*   Updated: 2024/04/17 20:43:39 by zvan-de-         ###   ########.fr       */
+/*   Updated: 2024/04/25 11:34:38 by zvan-de-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ class Converter
 		void 			convert_sdouble( string input );
 
 		void			print_conversion( void );
+		void			reset_values( void );
 
 	private:
 
@@ -58,11 +59,11 @@ class Converter
 		char			_c;
 		float			_f;
 		double			_d;
-		string			_literals[6];
 		bool			_pseudo;
 		bool			_c_possible;
 		bool			_i_possible;
 		bool			_f_possible;
+		string			_literals[6];
 		void 			(Converter::*_func[6])(string input);
 		
 };

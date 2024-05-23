@@ -6,7 +6,7 @@
 #    By: zvan-de- <zvan-de-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/11 12:46:32 by zvan-de-          #+#    #+#              #
-#    Updated: 2024/04/11 11:42:14 by zvan-de-         ###   ########.fr        #
+#    Updated: 2024/04/25 13:21:56 by zvan-de-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ R 	= \033[0;31m
 NAME 			= convert
 # Compiler and flags
 CC				= c++
-CFLAGS			= -Wall -Wextra -Werror -std=c++98
+CFLAGS			= -Wall -Wextra -Werror -std=c++98 -g
 
 # others
 RM				= rm -f
@@ -96,7 +96,7 @@ fclean: clean
 
 re: fclean all
 
-.PHONY:		all, clean, fclean, re
+.PHONY:		all clean fclean re
 
 # VALGRIND #
 

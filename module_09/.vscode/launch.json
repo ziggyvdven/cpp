@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": ["3", "2", "1", "4", "6", "5", "1", "3", "8", "5", "2", "42"],
+      "cwd": "/Users/zvan-de-/42/cpp/module_09/ex02/srcs",
+      "program": "/Users/zvan-de-/42/cpp/module_09/ex02/PmergeMe"
+    }
+  ]
+}

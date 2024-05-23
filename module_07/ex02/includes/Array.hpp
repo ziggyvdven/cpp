@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   array.hpp                                          :+:      :+:    :+:   */
+/*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zvan-de- <zvan-de-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 13:20:22 by zvan-de-          #+#    #+#             */
-/*   Updated: 2024/04/19 17:47:49 by zvan-de-         ###   ########.fr       */
+/*   Updated: 2024/05/03 16:48:18 by zvan-de-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,26 +33,29 @@ template< typename T = int >
 class Array {
 public:
 	Array ( void ):  _arr(new T()), _size(0){
-		cout << "default constructor called" << endl;
+		cout << G << "default constructor called" << END << endl;
 	};
 	
 	Array ( const unsigned int & n):  _arr(new T[n]), _size(n){
-		cout << "constructor by parameter called" << endl;
+		cout << G << "constructor by parameter called" << END << endl;
 	};
 
-	Array ( Array const & src){
-		cout << "copy constructor called" << endl;
-		*this = src;
+	Array ( Array const & src) : _arr ( new T[src._size] ), _size (src._size){
+		cout << G << "copy constructor called" << END << endl;
+		for ( unsigned int i( 0 ); i < _size; i++ )
+            _arr[i] = src._arr[i];
 	};
 	
 	~Array( void ){
+		cout << R << "Destructor called" << END << endl;
 		delete[] _arr;
 	};
 
 	Array &		operator=( Array const & rhs ){
-		cout << "= operator overide called" << endl;
+		cout << B << "= operator overide called" << END << endl;
 		if ( this != &rhs ){
-			delete[] _arr;
+			if (_size)
+				delete[] _arr;
 			_arr = NULL;
 			_arr = new T[rhs._size];
 			for (unsigned i = 0; i < rhs._size; i++)

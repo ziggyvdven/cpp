@@ -6,7 +6,7 @@
 /*   By: zvan-de- <zvan-de-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 13:21:33 by zvan-de-          #+#    #+#             */
-/*   Updated: 2024/04/17 20:43:34 by zvan-de-         ###   ########.fr       */
+/*   Updated: 2024/04/25 13:40:03 by zvan-de-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,21 @@ Converter::Converter(): _i(0), _c(0), _f(0.0f), _d(0.0), _pseudo(false) {
 }
 
 Converter::Converter( const Converter & src ){
+	_c_possible = true;
+	_i_possible = true;
+	_f_possible = true;
+	_literals[0] = "char";
+	_literals[1] = "int";
+	_literals[2] = "float";
+	_literals[3] = "sfloat";
+	_literals[4] = "double";
+	_literals[5] = "sdouble";
+	_func[0] = &Converter::convert_char;
+	_func[1] = &Converter::convert_int;
+	_func[2] = &Converter::convert_float;
+	_func[3] = &Converter::convert_sfloat;
+	_func[4] = &Converter::convert_double;
+	_func[5] = &Converter::convert_sdouble;
 	*this = src;
 }
 
@@ -58,6 +73,14 @@ Converter &				Converter::operator=( Converter const & rhs )
 {
 	if ( this != &rhs )
 	{
+		_i = rhs._i;
+		_c = rhs._c;
+		_f = rhs._f;
+		_d = rhs._d;
+		_pseudo = rhs._pseudo;
+		_c_possible = rhs._c_possible;
+		_i_possible = rhs._c_possible;
+		_f_possible = rhs._c_possible;
 	}
 	return *this;
 }
@@ -97,7 +120,8 @@ void	Converter::convert(const string type, string input){
 			}
 		}
 	print_conversion();
-	
+	reset_values();
+	return ;
 }
 
 void	Converter::print_conversion( void ){
@@ -124,7 +148,6 @@ void Converter::convert_char( string input ){
 	_i = static_cast<int>(_c);
 	_f = static_cast<float>(_c);
 	_d = static_cast<double>(_c);
-	cout << std::fixed << std::setprecision(1);
 }
 
 void Converter::convert_int( const string input ){
@@ -134,7 +157,6 @@ void Converter::convert_int( const string input ){
 		_c = 0;
 	_f = static_cast<float>(_i);
 	_d = static_cast<double>(_i);
-	cout << std::fixed << std::setprecision(1);
 }
 
 void Converter::convert_float( const string input ){
@@ -189,6 +211,18 @@ void Converter::convert_sdouble( const string input ){
 		_d = std::numeric_limits<double>::quiet_NaN();
 	_f = static_cast<float>(_d);
 	_pseudo = true;
+}
+
+void Converter::reset_values( void )
+{
+	_i = 0;
+	_c = 0;
+	_f = 0.0f;
+	_d = 0.0;
+	_pseudo = false;
+	_c_possible = true;
+	_i_possible = true;
+	_f_possible = true;
 }
 
 

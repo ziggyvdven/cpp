@@ -6,7 +6,7 @@
 /*   By: zvan-de- <zvan-de-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 17:07:54 by zvan-de-          #+#    #+#             */
-/*   Updated: 2024/04/12 16:39:49 by zvan-de-         ###   ########.fr       */
+/*   Updated: 2024/04/25 13:47:30 by zvan-de-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,12 @@ int main( void )
 	
 	a->i = 42;
 	a->str = "TEST";
+	cout << "Before serializing: " << endl << "i = " << a->i << endl << "a = " << a->str << endl;
 	uintptr_t p = serialize(a);
-	cout << &a << endl;
-	printf("p = %lu\n", p);
+	cout << "Serializing..." << endl << "uintptr value: " << p << endl;
 	Data *ptr = deserialize(p);
-	std::cout << ptr->str << std::endl;
-	std::cout << ptr->i << std::endl;
+	cout << "Deserializing..." << endl;
+	cout << "After serializing: " << endl << "i = " << ptr->i << endl << "a = " << ptr->str << endl;
 	delete a;
 	return (0);
 }

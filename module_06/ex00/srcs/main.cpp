@@ -6,7 +6,7 @@
 /*   By: zvan-de- <zvan-de-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 17:07:54 by zvan-de-          #+#    #+#             */
-/*   Updated: 2024/04/11 19:24:54 by zvan-de-         ###   ########.fr       */
+/*   Updated: 2024/04/25 13:30:48 by zvan-de-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,13 @@ int main(int argc, char **argv)
 			std::string type = literal_type(input);
 			Converter a;
 			a.convert(type, input);
+			Converter b;
+			b = a;
+			cout << endl << "SHOWING OBJECT BY ASSINGMENT OPERATOR:" << endl;
+			b.convert(type, input);
+			Converter c(b);
+			cout << endl << "SHOWING OBJECT BY COPY CONSTRUCTOR:" << endl;
+			c.convert(type, input);
 		}
 		catch (std::exception& e)
 		{

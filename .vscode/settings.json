@@ -69,7 +69,8 @@
     "list": "cpp",
     "map": "cpp",
     "set": "cpp",
-    "__functional_base_03": "cpp"
+    "__functional_base_03": "cpp",
+    "regex": "cpp"
   },
   "C_Cpp_Runner.cCompilerPath": "clang",
   "C_Cpp_Runner.cppCompilerPath": "clang++",

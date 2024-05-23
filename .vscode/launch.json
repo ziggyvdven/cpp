@@ -2,12 +2,26 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "(lldb) Launch",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "/Users/zvan-de-/42/cpp/module_06/ex00/convert",
+      "args": [
+        "5"
+      ],
+      "stopAtEntry": false,
+      "cwd": "/Users/zvan-de-/42/cpp/module_06/ex00/",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "lldb"
+    },
+    {
       "name": "C/C++ Runner: Debug Session",
       "type": "lldb",
       "request": "launch",
       "args": [],
-      "cwd": "/Users/zvan-de-/42/cpp/module_07/ex01/srcs",
-      "program": "/Users/zvan-de-/42/cpp/module_07/ex01/srcs/build/Debug/outDebug"
+      "cwd": "/Users/zvan-de-/42/cpp/module_09/ex01/srcs",
+      "program": "/Users/zvan-de-/42/cpp/module_09/ex01/srcs/build/Debug/outDebug"
     }
   ]
 }

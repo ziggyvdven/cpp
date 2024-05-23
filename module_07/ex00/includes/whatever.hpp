@@ -6,7 +6,7 @@
 /*   By: zvan-de- <zvan-de-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 13:20:22 by zvan-de-          #+#    #+#             */
-/*   Updated: 2024/04/17 21:29:47 by zvan-de-         ###   ########.fr       */
+/*   Updated: 2024/05/03 15:29:54 by zvan-de-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,12 @@ using std::string;
 
 
 template <typename type>
-type max(type a, type b)
+type const & max(type const &a, type const &b)
 {
 	return (a > b) ? a : b;
 }
 template <typename type>
-type min(type a, type b)
+type const & min(type const &a, type const &b)
 {
 	return (a < b) ? a : b;
 }
