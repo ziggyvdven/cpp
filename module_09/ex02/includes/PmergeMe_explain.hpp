@@ -41,16 +41,20 @@ class PmergeMe {
 public:
 
 	PmergeMe(T & container, P & pairs_container) : _con(container), _pairs(pairs_container) {
+		std::cout << G << "PmergeMe constructor by parameter called" << END << std::endl;
 	};
 
 	PmergeMe ( PmergeMe const & src){
+		cout << G << "copy constructor called" << END << endl;
 		*this = src;
 	};
 
 	~PmergeMe(){
+		std::cout << R << "PmergeMe Destructor called" << END << std::endl;
 	};
 
 	PmergeMe &				operator=( PmergeMe const & rhs ){
+		std::cout << "PmergeMe Copy assignment operator called" << std::endl;
 		if ( this != &rhs )
 		{
 			_con = rhs._con;
@@ -67,13 +71,25 @@ public:
 			_con.pop_back();
 		}
 		group_pairs(_con, _pairs);
+		cout << BOLD << "[STEP 1] GROUP THE ELEMENTS IN PAIRS OF 2:" << END << endl;
+		for (unsigned i = 0; (i < _con.size() / 2); i++)
+			cout << "Pair[" << i << "] [" << _pairs[i].first << " | " << _pairs[i].second << "]" << endl;
+		if (strangler >= 0)
+			cout << "Strangler = " << strangler << endl;
 		sort_pairs(_pairs);
+		cout << endl << BOLD << "[STEP 2] PEFORM COMPARISONS TO DETERMINE THE LARGER OF THE TWO ELEMENTS:" << END << endl;
+		for (unsigned i = 0; (i < _con.size() / 2); i++)
+			cout << "Pair[" << i << "] [" << _pairs[i].first << " | " << _pairs[i].second << "]" << endl;
 		mergesort(_pairs);
+		cout << endl << BOLD << "[STEP 3] RECURSEVELY SORT THE LARGER ELEMENTS FROM EACH PAIR AND CREATE SORTED SEQUENCE S FROM THE LARGEST ELEMENTS:" << END << endl;
+		for (unsigned i = 0; (i < _con.size() / 2); i++)
+			cout << "Pair[" << i << "] [" << _pairs[i].first << " | " << _pairs[i].second << "]" << endl;
 		insertion(_pairs);
 		if (strangler != -1){
 				typename T::iterator insertion_point = std::lower_bound(_con.begin(), _con.end(), strangler);
 				_con.insert(insertion_point, strangler);
 		}
+
 	};
 
 	void	group_pairs(T & Array, P & Pairs){
@@ -127,15 +143,23 @@ public:
 		int 	i = 0, l = 0, r = 0;
 
 		while (l < leftSize && r < rightSize){
-			if (leftArray[l] < rightArray[r])
-				array[i++] = leftArray[l++];
-			else 
-				array[i++] = rightArray[r++];
+			if (leftArray[l] < rightArray[r]){
+				array[i] = leftArray[l];
+				i++;
+				l++;
+			}
+			else {
+				array[i] = rightArray[r];
+				i++;
+				r++;
+			}
 		}
-		while (l < leftSize)
+		while (l < leftSize){
 			array[i++] = leftArray[l++];
-		while (r < rightSize)
+		}
+		while (r < rightSize){
 			array[i++] = rightArray[r++];
+		}
 	}
 
 	void	insertion(P & Pairs){
@@ -148,12 +172,35 @@ public:
 			S.push_back(Pairs[i].first);
 			Pend.push_back(Pairs[i].second);
 		}
+		cout << "S: {";
+		for (unsigned i = 0; i < S.size(); i++)
+			cout << S[i] << " ";
+		cout << "}" << endl;
+		cout << endl << BOLD << "[STEP 4] INSERT AT THE START OF S THE ELMENT THAT WAS PAIRED WITH THE FIRST AND SMALLERST ELEMENT OF S" << END ;
 		S.insert(S.begin(), Pend.front());
+		cout << endl;
+		cout << "Pend: {";
+		for (unsigned i = 0; i < Pend.size(); i++)
+			cout << Pend[i] << " ";
+		cout << "}" << endl;
+		cout << "S: {";
+		for (unsigned i = 0; i < S.size(); i++)
+			cout << S[i] << " ";
+		cout << "}" << endl;
 		generate_index_sequence(index_sequence, Pend.size());
+		cout << endl << BOLD << "[STEP 5.1] CREATE INSERTION ORDER BASED ON JACOBSTHAL SEQUENCE" << END << endl;
+		cout << "Index Sequence = {";
+		for (typename T::iterator it = index_sequence.begin() + 1; it != index_sequence.end(); ++it )
+			cout << *it + 1 << " ";
+		cout << "}" << endl;
+		cout << endl << BOLD << "[STEP 5.2] INSERT THE ELEMENTS FROM PEND TO S USING THE CREATED INDEX SEQUENCE IN A BINARY SEARCH" << END << endl;
+		cout << "Inserted values: ";
 		for (size_t i = 1; i < index_sequence.size(); i++){
 			typename T::iterator insertion_point = std::lower_bound(S.begin(), S.end(), Pend[index_sequence[i]]);
 			S.insert(insertion_point, Pend[index_sequence[i]]);
+			cout << Pend[index_sequence[i]] << " ";
 		}
+		cout << endl << endl;
 		_con = S;
 	}
 

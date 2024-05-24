@@ -1,48 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   main_explain.cpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zvan-de- <zvan-de-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 17:07:54 by zvan-de-          #+#    #+#             */
-/*   Updated: 2024/05/24 16:50:06 by zvan-de-         ###   ########.fr       */
+/*   Updated: 2024/05/24 16:38:21 by zvan-de-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/PmergeMe.hpp"
+#include "../includes/PmergeMe_explain.hpp"
 
 int	sort_containers(std::deque<int> & deq, std::vector<int> & vec, int argc)
 {
-	string names[2] = {"deque", "vector"};
-	std::deque< std::pair <int, int> > d_pairs;
 	std::vector< std::pair <int, int> > v_pairs;
 	
 	PmergeMe<std::vector<int>, std::vector< std::pair <int, int> > > vector(vec, v_pairs);
-	PmergeMe<std::deque<int>, std::deque< std::pair <int, int> > > deque(deq, d_pairs);
 	
-	cout << "Before:  ";
+	cout << endl << "Before:  ";
 	for (size_t i = 0; i < deq.size(); i++)
 		cout << deq[i] << " ";
-	cout << endl;
+	cout << endl << endl;
 	struct timeval start, end;
-	for (int i = 0; i < 2; i++){
+	for (int i = 0; i < 1; i++){
 		gettimeofday(&start, nullptr);
 		if (i == 0){
 			vector.sort();
 		}
-		else
-			deque.sort();
 		gettimeofday(&end, nullptr);
 		if (i == 0){
-			cout << "After:   ";
+			cout << "After:  ";
 			for (size_t i = 0; i < vec.size(); i++)
 				cout << vec[i] << " ";
-			cout << endl;
+			cout << endl << endl;
 		}
 		double duration = (end.tv_sec - start.tv_sec) * 1e6 + (end.tv_usec - start.tv_usec);
 		cout << std::fixed << std::setprecision(5);
-		cout << "Time to process a range of " << argc - 1 << " elements with std::" << names[i] << " : " << duration << " us" << endl; 
+		cout << "Time to process a range of " << argc - 1 << " elements with std::" << "std::vector" << " : " << duration << " us" << endl; 
 	}
 	return (0);
 }
@@ -62,7 +57,7 @@ int main(int argc, char** argv)
 			num = std::strtol(argv[i], &end, 10);
 			if (num <= 0 || num > INT_MAX)
 			{
-				std::cerr << R << "ERROR [PLEASE ENTER ONLY POSITIVE INTEGER VALUES LESS THAN INT_MAX]" << END << endl;
+				std::cerr << R << "ERROR [PLEASE ENTER ONLY POSITIVE INTEGER VALUES]" << END << endl;
 				return (1);
 			}
 			if (*end != '\0') {
@@ -72,10 +67,7 @@ int main(int argc, char** argv)
 			deq.push_back(num);
 			vec.push_back(num);
 		}
-		if (std::is_sorted(deq.begin(), deq.end()) || std::is_sorted(vec.begin(), vec.end()))
-			std::cerr << R << "ERROR [ALLREADY SORTED]" << END << std::endl;
-		else
-			sort_containers(deq, vec, argc);
+		sort_containers(deq, vec, argc);
 	}
 	else
 	{

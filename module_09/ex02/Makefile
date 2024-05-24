@@ -6,7 +6,7 @@
 #    By: zvan-de- <zvan-de-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/11 12:46:32 by zvan-de-          #+#    #+#              #
-#    Updated: 2024/05/23 15:55:57 by zvan-de-         ###   ########.fr        #
+#    Updated: 2024/05/24 16:36:47 by zvan-de-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,8 @@ R 	= \033[0;31m
 
 # Program name
 NAME 			= PmergeMe
+NAME_EXPLAIN	= PmergeMe_explain
+
 # Compiler and flags
 CC				= c++
 CFLAGS			= -Wall -Wextra -Werror -std=c++98 -g
@@ -39,10 +41,12 @@ SRCS_PATH		= srcs/
 SRCS			= $(addprefix $(SRCS_PATH), $(SRCS_FILES))
 
 # Includes
-HEADERS			= -I ./includes
+HEADERS			= -I ./includes/PmergeMe.hpp
+HEADERS_EXPLAIN	= -I ./includes/PmergeMe_explain.hpp
 
 # library and source files
-SRCS_FILES		= $(wildcard $(SRCS_PATH)*.cpp)
+SRCS_FILES		    = $(SRCS_PATH)main.cpp
+SRCS_FILES_EXPLAIN	= $(SRCS_PATH)main_explain.cpp
 
 # Progress bar variables
 TOTAL 			= $(words $(SRCS_FILES))
@@ -92,16 +96,12 @@ clean:
 	@echo "$(R)Files succesfully cleaned 🗑$(RT)"
 
 fclean: clean
-	@$(RM) $(NAME)
+	@$(RM) $(NAME) $(NAME_EXPLAIN)
 
 re: fclean all
 
-.PHONY:		all, clean, fclean, re
+explain:
+	@$(MAKE) "NAME=$(NAME_EXPLAIN)" "SRCS_FILES=$(SRCS_FILES_EXPLAIN)" "HEADER=$(HEADERS_EXPLAIN)"
+	@./$(NAME_EXPLAIN) 4 2 5 1 7 6 3 9 8 
 
-# VALGRIND #
-
-# val: $(NAME)
-# 	valgrind --leak-check=full \
-# 	--show-leak-kinds=all \
-# 	--show-reachable=yes \
-# 	--track-origins=yes -s \
+.PHONY:		all clean fclean re explain

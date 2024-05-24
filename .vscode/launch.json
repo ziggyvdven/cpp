@@ -20,8 +20,8 @@
       "type": "lldb",
       "request": "launch",
       "args": [],
-      "cwd": "/Users/zvan-de-/42/cpp/module_09/ex01/srcs",
-      "program": "/Users/zvan-de-/42/cpp/module_09/ex01/srcs/build/Debug/outDebug"
+      "cwd": "/Users/zvan-de-/42/cpp/module_05/ex03/srcs",
+      "program": "/Users/zvan-de-/42/cpp/module_05/ex03/srcs/build/Debug/outDebug"
     }
   ]
 }
