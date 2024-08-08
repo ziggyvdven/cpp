@@ -6,7 +6,7 @@
 /*   By: zvan-de- <zvan-de-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 13:21:33 by zvan-de-          #+#    #+#             */
-/*   Updated: 2024/04/25 13:40:03 by zvan-de-         ###   ########.fr       */
+/*   Updated: 2024/06/06 20:29:47 by zvan-de-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,33 +92,12 @@ Converter &				Converter::operator=( Converter const & rhs )
 void	Converter::convert(const string type, string input){
 	if (input.empty() || type.empty())
 		return;
-	for (int i = 0; i <= 6; i++)
+	for (int i = 0; i <= 6; i++){
 		if (type == this->_literals[i])
 		{
-			switch (i){
-				case 0:
-					(this->*_func[0])(input);
-					break;
-				case 1:
-					(this->*_func[1])(input);
-					break;
-				case 2:
-					(this->*_func[2])(input);
-					break;
-				case 3:
-					(this->*_func[3])(input);
-					break;
-				case 4:
-					(this->*_func[4])(input);
-					break;
-				case 5:
-					(this->*_func[5])(input);
-					break;
-				default:
-					cout << "TYPE UNKNOWN" << endl;
-					break;
-			}
+			(this->*_func[i])(input);
 		}
+	}
 	print_conversion();
 	reset_values();
 	return ;
