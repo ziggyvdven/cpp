@@ -6,7 +6,7 @@
 /*   By: zvan-de- <zvan-de-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 17:07:54 by zvan-de-          #+#    #+#             */
-/*   Updated: 2024/05/15 17:04:56 by zvan-de-         ###   ########.fr       */
+/*   Updated: 2024/08/15 14:35:35 by zvan-de-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ int main()
 	MutantStack<int>::iterator ite = mstack.end();
 	++it;
 	--it;
+	int i = *it + 1;
 	
 	while (it != ite) {
 		std::cout << *it << std::endl;
